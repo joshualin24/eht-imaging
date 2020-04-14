@@ -1,7 +1,7 @@
 # SRC: M87 
 # RA: 12 h 30 m 49.4234 s
 # DEC: 12 deg 23 m 28.0437 s
-# MJD: 0.000000 
+# MJD: 48277.000000 
 # RF: 230.0000 GHz 
 # FOVX: 160 pix 0.000160 as 
 # FOVY: 160 pix 0.000160 as 
