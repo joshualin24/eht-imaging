@@ -11,11 +11,12 @@ from   ehtim.calibrating import self_cal as sc
 #from  ehtim.plotting import self_cal as sc
 
 # Load the image and the array
-im = eh.image.load_txt('../models/avery_sgra_eofn.txt')
+#im = eh.image.load_txt('../models/avery_sgra_eofn.txt')
+im = eh.image.load_txt('../models/avery_m87_1_eofn.txt')
 eht = eh.array.load_txt('../arrays/EHT2017.txt')
 
 # Look at the image
-im.display(export_pdf = "./joshua_image/inputimage.pdf")
+#im.display(export_pdf = "./joshua_image/inputimage.pdf")
 
 # Observe the image
 # tint_sec is the integration time in seconds, and tadv_sec is the advance time between scans
@@ -35,29 +36,29 @@ obs = im.observe(eht, tint_sec, tadv_sec, tstart_hr, tstop_hr, bw_hz,
 #obs = obs.deblur()
 
 # These are some simple plots you can check
-obs.plotall('u','v', conj=True) # uv coverage
-obs.plotall('uvdist','amp') # amplitude with baseline distance'
-obs.plot_bl('SMA','ALMA','phase') # visibility phase on a baseline over time
+# obs.plotall('u','v', conj=True) # uv coverage
+# obs.plotall('uvdist','amp') # amplitude with baseline distance'
+# obs.plot_bl('SMA','ALMA','phase') # visibility phase on a baseline over time
 
 # You can check out the dirty image, dirty beam, and clean beam
-npix = 64
-fov = 1.5*im.xdim * im.psize # slightly enlarge the field of view
-dim = obs.dirtyimage(npix, fov)
-dbeam = obs.dirtybeam(npix, fov)
-cbeam = obs.cleanbeam(npix,fov)
-dim.display(export_pdf = "./joshua_image/dirtyimage.pdf")
-dbeam.display(export_pdf = "./joshua_image/dirtybeam.pdf")
-cbeam.display(export_pdf = "./joshua_image/cleanbeam.pdf")
-#
-# # Resolution
+# npix = 64
+# fov = 1.5*im.xdim * im.psize # slightly enlarge the field of view
+# dim = obs.dirtyimage(npix, fov)
+# dbeam = obs.dirtybeam(npix, fov)
+# cbeam = obs.cleanbeam(npix,fov)
+# dim.display(export_pdf = "./joshua_image/dirtyimage.pdf")
+# dbeam.display(export_pdf = "./joshua_image/dirtybeam.pdf")
+# cbeam.display(export_pdf = "./joshua_image/cleanbeam.pdf")
+# #
+# # # Resolution
 # beamparams = obs.fit_beam() # fitted beam parameters (fwhm_maj, fwhm_min, theta) in radians
 # res = obs.res() # nominal array resolution, 1/longest baseline
 # print("Clean beam parameters: " , beamparams)
 # print("Nominal Resolution: " ,res)
 #
 # # Export the visibility data to uvfits/text
-obs.save_txt('./joshua_image/obs.txt') # exports a text file with the visibilities
-obs.save_uvfits('./joshua_image/obs.uvp') # exports a UVFITS file modeled on template.UVP
+obs.save_txt('./joshua_image/new_obs.txt') # exports a text file with the visibilities
+#obs.save_uvfits('./joshua_image/obs.uvp') # exports a UVFITS file modeled on template.UVP
 #
 # # Generate an image prior
 # npix = 32

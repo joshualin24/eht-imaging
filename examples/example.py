@@ -11,7 +11,8 @@ from   ehtim.calibrating import self_cal as sc
 #from  ehtim.plotting import self_cal as sc
 
 # Load the image and the array
-im = eh.image.load_txt('../models/avery_sgra_eofn.txt')
+#im = eh.image.load_txt('../models/avery_sgra_eofn.txt')
+im = eh.image.load_txt('../Joshua_work_zone/text.txt')
 eht = eh.array.load_txt('../arrays/EHT2017.txt')
 
 # Look at the image
@@ -117,5 +118,3 @@ out.save_txt(outname + '.txt')
 out.save_fits(outname + '.fits')
 outblur.save_txt(outname + '_blur.txt')
 outblur.save_fits(outname + '_blur.fits')
-
-
