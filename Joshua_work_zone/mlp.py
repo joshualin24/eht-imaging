@@ -79,4 +79,5 @@ x_data = torch.from_numpy(x_data).float().cuda().unsqueeze(0)
 output = mlp(x_data)
 
 print("output", output)
+print("test")
 ###
