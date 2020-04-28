@@ -13,10 +13,11 @@ import glob
 
 # Load the image and the array
 #im = eh.image.load_txt('../models/avery_sgra_eofn.txt')
-data_path = '/data/uv_visibility/'
+data_path = '/data/EHT_mock_obs/mock_obs_val'
 fname_list = glob.glob(data_path + '*.txt')
 
 for fname in fname_list:
+    s2 = 'uv_visibility'
     data_name = fname[fname.index(s2) + len(s2):-4]
 
     im = eh.image.load_txt(fname)
@@ -64,7 +65,7 @@ for fname in fname_list:
     # print("Nominal Resolution: " ,res)
     #
     # # Export the visibility data to uvfits/text
-    obs.save_txt('./joshua_mock_uv/' + 'new_obs' + data_name + '.txt') # exports a text file with the visibilities
+    obs.save_txt('../mock_uv_val/' + 'new_obs' + data_name + '.txt') # exports a text file with the visibilities
     #obs.save_uvfits('./joshua_image/obs.uvp') # exports a UVFITS file modeled on template.UVP
     #
     # # Generate an image prior
